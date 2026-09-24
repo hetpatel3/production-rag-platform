@@ -1,0 +1,6 @@
+# we want add .gitignore file here to ignore certain files and directories in our git repository.
+.env
+
+.venv/
+__pycache__/
+*.pyc

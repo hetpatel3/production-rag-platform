@@ -1,0 +1,28 @@
+# FastAPI is the backbone web framework for your project.
+# What it does: It lets you build the URL endpoints (APIs) that your application needs.
+# Why you need it: Without it, your RAG system is just a script running in a terminal.
+fastapi
+
+# Uvicorn is the web server engine that hosts your code.
+# What it does: FastAPI defines how your application handles web traffic, but Uvicorn is the actual background machine that listens for incoming web traffic on your computer (e.g., at http://127.0.0.1:8000).
+# Why you need it: FastAPI cannot run on its own; it requires an asynchronous server like Uvicorn to run your code and stay online.
+uvicorn[standard]
+
+# This is the manager and validator for your environment variables.
+# What it does: It reads your hidden settings file (.env), makes sure no crucial keys are missing, and ensures that numbers are loaded as integers (like chunk_size = 500) and text as strings.
+# Why you need it: It acts as a safety guard. It stops your app from starting up if you forget to add your groq_api_key, saving you from weird bugs later.
+pydantic-settings
+
+# This is a specific extension helper for handling uploaded files.
+# What it does: It gives FastAPI the ability to process complex data formats, specifically files sent over the internet via HTML forms.
+# Why you need it: In a RAG application, users will need to upload their own documents (like PDFs, TXT, or DOCX files) so the system can read and store them. FastAPI requires this library to accept those file uploads.
+python-multipart
+
+# This is the AI machine that creates your vector embeddings.
+# What it does: It downloads and runs the AI model specified in your config (all-MiniLM-L6-v2) right on your computer. It takes text sentences and translates them into long lists of numbers (vectors) that capture the meaning of the words.
+# Why you need it: RAG relies on comparing vectors to find matching documents. This library creates those vectors before you save them into your Qdrant database.
+sentence-transformers
+
+qdrant-client
+groq
+python-dotenv
