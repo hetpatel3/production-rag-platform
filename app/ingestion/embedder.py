@@ -11,7 +11,7 @@ def get_embedding_model() -> SentenceTransformer:
 
 
 def get_vector_size() -> int:
-    dimension = get_embedding_model().get_sentence_embedding_dimension()
+    dimension = get_embedding_model().get_embedding_dimension()
     if dimension is None:
         raise RuntimeError("Embedding model does not provide a vector size")
     return dimension
